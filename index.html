@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font style</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div class="userinput">
+        <input type="text" name="usertext" id="usertext" placeholder="Enter you text here" />
+        <br />
+        <div class="controls">
+            <div class="property">
+                <div class="form-control">
+                    <label for="usercolor">Select Color</label>
+                    <input type="color" name="usercolor" id="usercolor" />
+                </div>
+
+                <div class="form-output">Color: <span id="color-value">#000000</span></div>
+            </div>
+
+            <div class="property">
+                <div class="form-control">
+                    <label for="fontsize">Select Size</label>
+                    <input type="range" min="16" max="50" name="fontsize" id="fontsize" value="20" />
+                </div>
+
+                <div class="form-output">Font-Size: <span id="font-size-value">20px</span></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="output">
+        <p id="output-text"></p>
+    </div>
+
+    <script src="./jscode.js"></script>
+</body>
+
+</html>
