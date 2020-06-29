@@ -3,6 +3,12 @@ const outputText = document.getElementById("output-text");
 const userColor = document.getElementById("usercolor");
 const fontSize = document.getElementById("fontsize");
 
+const fontStyleArr = {
+    bold: false,
+    italic: false,
+    underline: false
+};
+
 const printValue = e => {
     outputText.innerText = e.target.value;
 }
@@ -23,3 +29,16 @@ fontSize.addEventListener("input", e => {
     outputText.style.fontSize = e.target.value + "px";
     document.getElementById("font-size-value").innerText = e.target.value + "px";
 });
+
+const fontStyleChange = e => {
+    switch (e.innerText) {
+        case "Bold": fontStyleArr.bold = !fontStyleArr.bold; break;
+        case "Italic": fontStyleArr.italic = !fontStyleArr.italic; break;
+        case "Underline": fontStyleArr.underline = !fontStyleArr.underline; break;
+        default: return;
+    }
+
+    outputText.style.fontWeight = fontStyleArr.bold ? "bold" : "initial";
+    outputText.style.fontStyle = fontStyleArr.italic ? "italic" : "initial";
+    outputText.style.textDecoration = fontStyleArr.underline ? "underline" : "initial";
+}
